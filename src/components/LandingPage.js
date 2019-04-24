@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "../images/MYtineraryLogo.png";
 import arrow from "../images/circled-right-2.png";
+import Slider from "./Slider";
 
 export class LandingPage extends Component {
   render() {
@@ -12,6 +13,7 @@ export class LandingPage extends Component {
           cities.
         </p>
         <img src={arrow} className="App-arrow" alt="arrow" />
+        <Slider />
       </div>
     );
   }
