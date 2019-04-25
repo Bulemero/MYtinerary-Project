@@ -17,7 +17,7 @@ export class Slider extends Component {
     };
     return (
       <div>
-        <h2>Multiple Rows</h2>
+        <h2>Popular MYtineraries</h2>
         <Carousel {...settings}>
           <div>
             <h3>1</h3>

@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  margin: 10px;
+  margin: 10px 0px 10px 10px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -31,6 +31,11 @@
   font-size: 16px;
 }
 
+.App-browsing {
+  font-family: cursive;
+  font-weight: bold;
+}
+
 .App-arrow {
   height: 30vmin;
 }
@@ -46,4 +51,90 @@
 .slick-next:before,
 .slick-prev:before {
   color: black;
+}
+
+/*-----NEW ACCOUNT-----*/
+
+.new-account-block {
+  margin-top: 60px;
+}
+
+.new-account-item {
+  padding: 0px 50px;
+}
+
+/*-----FOOTER-----*/
+
+.App-footer {
+  margin-top: 50px;
+}
+
+/*-----MAIN MENU-----*/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 30px;
+  height: 25px;
+  right: 20px;
+  top: 18px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #dc2b00;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #dc2b00;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #3a4e56;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #3a4e56;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color: white;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

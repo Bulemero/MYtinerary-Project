@@ -1,7 +1,35 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 
-const MainMenu = () => {
+class MainMenu extends React.Component {
+  showSettings(event) {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <Menu>
+        <a id="home" className="menu-item" href="/">
+          Home
+        </a>
+        <a id="cities" className="menu-item" href="/cities">
+          Cities
+        </a>
+        <a id="signup" className="menu-item" href="/signup">
+          Sign Up
+        </a>
+        <a id="login" className="menu-item" href="/login">
+          Log In
+        </a>
+      </Menu>
+    );
+  }
+}
+
+export default MainMenu;
+
+/* const MainMenu = () => {
   return (
     <nav>
       <div>
@@ -20,12 +48,10 @@ const MainMenu = () => {
             <Link to="/login">LogIn</Link>
           </li>
           <li>
-            <Link to="/mytinerary">MYtinerary</Link>
+            <NavLink to="/mytinerary">MYtinerary</NavLink>
           </li>
         </ul>
       </div>
     </nav>
   );
-};
-
-export default MainMenu;
+}; */
