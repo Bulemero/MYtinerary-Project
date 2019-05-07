@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const City = require("../models/city");
 
 //get a list of cities from the database
 router.get("/cities", function(req, res) {
@@ -8,11 +9,8 @@ router.get("/cities", function(req, res) {
 
 //add a new city to the db
 router.post("/cities", function(req, res) {
-  console.log(req.body);
-  res.send({
-    type: "POST",
-    city: req.body.city,
-    country: req.body.country
+  City.create(req.body).then(function(city) {
+    res.send(city);
   });
 });
 

@@ -1,8 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 //set up express app
 const app = express();
+
+//connect to MongoDB
+mongoose.connect(
+  "mongodb+srv://Bulemero:$MERN2019@mern2019-wzxp5.mongodb.net/test?retryWrites=true",
+  {
+    useNewUrlParser: true
+  }
+);
+mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
 
