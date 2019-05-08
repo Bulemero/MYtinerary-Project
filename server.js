@@ -7,7 +7,7 @@ const app = express();
 
 //connect to MongoDB
 mongoose.connect(
-  "mongodb+srv://Bulemero:$MERN2019@mern2019-wzxp5.mongodb.net/test?retryWrites=true",
+  "mongodb+srv://Bulemero:$MERN2019@mern2019-wzxp5.mongodb.net/MERN2019?retryWrites=true",
   {
     useNewUrlParser: true
   }
@@ -18,6 +18,12 @@ app.use(bodyParser.json());
 
 //initialize routes
 app.use("/api", require("./routes/api"));
+
+//error handling middleware
+app.use(function(err, req, res, next) {
+  //console.log(err);
+  res.status(422).send({ error: err.message });
+});
 
 /* below routes are not being used anymore since we have built our CRUD routes into the api.js file for a cleaner code
 app.get("/", (req, res) => res.send("HELLO default"));
