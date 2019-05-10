@@ -1,12 +1,47 @@
 import React from "react";
 
-const Cities = () => {
-  return (
-    <div>
-      <h4>Cities</h4>
-      <p>This will be the Cities page</p>
-    </div>
-  );
-};
+class allCities extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      isLoaded: false
+    };
+  }
 
-export default Cities;
+  componentDidMount() {
+    fetch("/api/cities", {
+      method: "GET",
+      headers: { Accept: "application/json" }
+    })
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          items: json
+        });
+      });
+  }
+
+  render() {
+    var { isLoaded, items } = this.state;
+
+    if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <div className="App">
+          <ul>
+            {items.map(item => (
+              <li key={item._id}>
+                {item.city} | {item.country}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+  }
+}
+
+export default allCities;

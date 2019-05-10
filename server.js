@@ -14,6 +14,10 @@ mongoose.connect(
 );
 mongoose.Promise = global.Promise;
 
+//express.static middleware to serve static files to the user
+
+app.use(express.static("public"));
+
 app.use(bodyParser.json());
 
 //initialize routes

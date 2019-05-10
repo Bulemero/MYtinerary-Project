@@ -4,9 +4,11 @@ const City = require("../models/city");
 
 //get a list of cities from the database
 router.get("/cities", function(req, res, next) {
-  City.find({}).then(function(cities) {
-    res.send(cities);
-  });
+  City.find({})
+    .sort({ city: 1 })
+    .then(function(cities) {
+      res.send(cities);
+    });
 });
 
 //add a new city to the db
