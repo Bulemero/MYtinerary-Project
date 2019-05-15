@@ -11,6 +11,12 @@ router.get("/cities", function(req, res, next) {
     });
 });
 
+//get a specific city from the list of cities by /:id
+
+router.get("/cities/:id", function(req, res, next) {
+  res.send("You requested to see a specific city with id " + req.params.id);
+});
+
 //add a new city to the db
 router.post("/cities", function(req, res, next) {
   City.create(req.body)

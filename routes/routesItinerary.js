@@ -11,6 +11,14 @@ router.get("/itineraries", function(req, res, next) {
     });
 });
 
+//get a specific itinerary from the list of itineraries by /:id
+
+router.get("/itineraries/:id", function(req, res, next) {
+  res.send(
+    "You requested to see a specific itinerary with id " + req.params.id
+  );
+});
+
 //add a new itinerary to the db
 router.post("/itineraries", function(req, res, next) {
   Itinerary.create(req.body)

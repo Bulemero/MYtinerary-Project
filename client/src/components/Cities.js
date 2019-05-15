@@ -46,15 +46,17 @@ class allCities extends React.Component {
       return (
         <div className="App">
           <div>
-            <label htmlFor="filter">Filter by City: </label>
-            <input
-              type="text"
-              id="filter"
-              value={this.state.cityFilter}
-              onChange={this.handleChange}
-            />
+            <label htmlFor="filter">Filter our current cities: </label>
+            <div>
+              <input
+                type="text"
+                id="filter"
+                value={this.state.cityFilter}
+                onChange={this.handleChange}
+              />
+            </div>
           </div>
-          <ul>
+          <ul className="cityList">
             {filteredCities.map(item => (
               <li key={item._id}>
                 {item.city} | {item.country}
